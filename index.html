@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+</head>
+<body class="flex flex-col">
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-100">
+        <div class="container flex flex-wrap items-center justify-between mx-auto">
+            <a href="https://flowbite.com/" class="flex items-center">
+                <span class="self-center text-xl font-semibold whitespace-nowrap">Explainly</span>
+            </a>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+                    <li>
+                        <a href="#" class="block py-2 pl-3 pr-4 text-white bg-rose-500 rounded md:bg-transparent md:text-rose-500 md:p-0 dark:text-white" aria-current="page">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">DISCOVERY</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="flex flex-col items-center justify-center px-16 gap-8 mt-8">
+        <div>
+            <h1 class="text-gray-800 font-bold text-3xl">Explicador de Modelos</h1>
+        </div>
+        <div>
+            <p>
+                Con esta aplicación usted podrá clasificar noticias y,
+                 además, recibir una justificación de la decisión tomada
+                 por nuestro modelo.
+            </p>
+        </div>
+        <div>
+            <textarea  id="textArea1" rows="8" cols="128" class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-8 border-gray-100 focus:ring-blue-500 focus:border-blue-500" placeholder="Escriba aqui el texto que desea categorizar..."></textarea>
+        </div>
+        <button class="rounded-lg px-10 py-2 text-white bg-rose-500" onClick="sendText(document.getElementById('textArea1').value)">
+            Predecir
+        </button>
+    </div>
+</body>
+</html>
