@@ -3,8 +3,8 @@ const data = { username: 'example' };
 function setData() {
 
     var results = JSON.parse(sessionStorage.getItem("resultados"));
+    console.log(results)
 
-    if(results){
         document.getElementById("categoria1").textContent  = results.predictions[0].clase;
         document.getElementById("categoria2").textContent  = results.predictions[1].clase;
         document.getElementById("categoria3").textContent  = results.predictions[2].clase;
@@ -19,8 +19,7 @@ function setData() {
         document.getElementById("imgAF3").src += results.predictions[2].favor;
         document.getElementById("imgEC1").src += results.predictions[0].contra;
         document.getElementById("imgEC2").src += results.predictions[1].contra;
-        document.getElementById("imgEC3").src += results.predictions[2].contra;
-    }    
+        document.getElementById("imgEC3").src += results.predictions[2].contra;  
 
 }
 
@@ -42,8 +41,8 @@ function sendText(texto) {
 
     // Save data to sessionStorage
     sessionStorage.setItem("resultados", JSON.stringify(data));
-
     console.log('Success:', data);
+    window.location.pathname = '/results';
     })
     .catch((error) => {
     console.error('Error:', error);
